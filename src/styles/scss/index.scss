@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+$primary-color: #1a73e8;
+$secondary-color: #f0f0f0;
+$border-color: #d3d3d3;
+$text-color: #fff;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$transition: 0.05s linear;
+
+@mixin flex-center($align: center, $justify: center) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  @include flex-center($align: normal);
+
+  width: 100%;
+  background-color: $primary-color;
+  padding: 16px 32px;
+  color: $text-color;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.search-bar {
+  border: 2px solid $border-color;
+  border-radius: 4px;
+  padding: 8px;
+  outline: none;
+  width: 300px;
+  transition: border $transition;
+  box-shadow: $box-shadow;
+
+  &:focus {
+    border: 2px solid $primary-color;
+  }
+}
+
+.search-icon {
+  @include flex-center();
+
+  background: $secondary-color;
+  border: 4px solid $secondary-color;
+  border-radius: 100%;
+  box-shadow: $box-shadow;
+  width: 30px;
+  height: 30px;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+}
