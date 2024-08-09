@@ -1,0 +1,35 @@
+@use "base";
+@use "mixins";
+
+.product {
+  @include mixins.flex($align: center, $justify: space-around);
+
+  width: 100%;
+  border-top: 1px solid base.$border-color;
+  border-bottom: 1px solid base.$border-color;
+  padding: 4px 16px;
+
+  .wrapper {
+    @include mixins.flex($direction: column, $align: flex-start);
+  }
+
+  &__quantity {
+    color: base.$primary-color;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 4px;
+    border: 2px solid base.$secondary-color;
+    max-width: 29px;
+    text-align: center;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__description {
+    font-size: 0.8em;
+  }
+}

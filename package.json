@@ -1,9 +1,10 @@
 {
-  "name": "vanilla-kaution",
+  "name": "kaution-client-side",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/styles/scss:src/styles/css --no-source-map --style=compressed"
+    "dev:sass": "sass --watch app/styles/scss:app/styles/css --no-source-map --style=compressed",
+    "dev": "esbuild app/javascript/*.* --outdir=app/build --bundle --watch --loader:.js=jsx"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +13,6 @@
     "axios": "^1.7.3",
     "esbuild": "^0.23.0",
     "esbuild-plugin-tsc": "^0.4.0",
-    "esbuild-sass-plugin": "^3.3.1",
     "sass": "^1.77.8"
   }
 }
