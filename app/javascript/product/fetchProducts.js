@@ -7,8 +7,6 @@ async function fetchProducts() {
       product.quantity = Math.floor(Math.random() * 100);
       product.name = product.title;
       product.description = product.description.substring(0, 100) + "...";
-      delete product.title;
-      delete product.price;
 
       return product
     })

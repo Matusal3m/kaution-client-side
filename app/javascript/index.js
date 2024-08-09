@@ -1,5 +1,5 @@
-import createProductElement from "./Product";
-import fetchProducts from "./fetchProducts";
+import createProductElement from "./product/createProductElement";
+import fetchProducts from "./product/fetchProducts";
 
 async function renderProducts() {
   try {

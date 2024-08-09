@@ -1,4 +1,4 @@
-export default function createProductElement({
+function createProductElement({
   id,
   name,
   description,
@@ -19,3 +19,5 @@ export default function createProductElement({
 
   return productElement;
 }
+
+export default createProductElement

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev:sass": "sass --watch app/styles/scss:app/styles/css --no-source-map --style=compressed",
-    "dev": "esbuild app/javascript/*.* --outdir=app/build --bundle --watch --loader:.js=jsx"
+    "dev": "esbuild app/javascript/*.* --outdir=app/build --bundle --watch --loader:.js=jsx --minify"
   },
   "author": "",
   "license": "ISC",

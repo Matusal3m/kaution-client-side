@@ -3,9 +3,7 @@
 @use "product";
 @use "mixins";
 
-body {
-  overflow: hidden;
-}
+body {overflow: hidden;}
 
 header {
   @include mixins.flex($align: normal);
