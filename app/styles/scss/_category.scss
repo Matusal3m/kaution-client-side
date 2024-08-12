@@ -11,7 +11,8 @@
     color: base.$secondary-color;
   }
 
-  &--desactive {
-    border: 1px solid base.$border-color;
+  &--toggle {
+    border: 3px solid white;
   }
+
 }

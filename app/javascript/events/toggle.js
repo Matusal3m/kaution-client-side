@@ -1,12 +1,12 @@
 import toggleCategory from "../actions/toggleCategory";
 
 function toggle() {
-  const categoriesName = Array.from(
-    document.querySelectorAll(".category__name")
+  const categories = Array.from(
+    document.querySelectorAll(".category")
   );
 
-  categoriesName.forEach((category) => {
-    category.addEventListener("click", () => toggleCategory(category));
+  categories.forEach((category) => {
+    category.addEventListener("click", (e) => toggleCategory(category, e));
   });
 }
 

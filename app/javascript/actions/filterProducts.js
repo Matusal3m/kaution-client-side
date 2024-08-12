@@ -7,11 +7,7 @@ function filterProducts(filter) {
 
     const isMatch = productName.includes(filter.toLowerCase());
 
-    product.classList.add(
-      isMatch ? "product--isMatched" : "product--isNotMatched"
-    );
-
-    return isMatch; 
+    //TODO: add description filter
   });
 
   return filteredProducts;

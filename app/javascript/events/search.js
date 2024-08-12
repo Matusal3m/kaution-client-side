@@ -1,5 +1,4 @@
 import filterProducts from "../actions/filterProducts";
-import renderCategories from "../category/renderCategories";
 
 function searchProducts() {
   const searchInput = document.querySelector("#search__input");
