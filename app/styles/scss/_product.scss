@@ -2,7 +2,7 @@
 @use "mixins";
 
 .product {
-  @include mixins.flex($align: center, $justify: space-around);
+  @include mixins.flex($align: center, $justify: space-between);
 
   width: 100%;
   border-top: 1px solid base.$border-color;
@@ -32,4 +32,17 @@
   &__description {
     font-size: 0.8em;
   }
+
+  &--desactive {
+    display: none;
+  }
+
+  &--isMatched {
+    display: block;
+  }
+
+  &--isNotMatched {
+    display: none;
+  }
+
 }

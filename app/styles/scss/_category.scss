@@ -1,0 +1,17 @@
+@use "base";
+@use "mixins";
+
+.category {
+  @include mixins.flex($align: normal, $justify: space-between, $direction: column);
+
+  &__name {
+    font-weight: bold;
+    background: base.$tertiary-color;
+    padding: 8px;
+    color: base.$secondary-color;
+  }
+
+  &--desactive {
+    border: 1px solid base.$border-color;
+  }
+}

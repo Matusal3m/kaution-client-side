@@ -1,18 +1,7 @@
-import createProductElement from "./product/createProductElement";
-import fetchProducts from "./product/fetchProducts";
+import renderCategories from "./category/renderCategories.js";
+import * as events from "./events";
 
-async function renderProducts() {
-  try {
-    const mainElement = document.querySelector("main");
-    const products = await fetchProducts();
-
-    products.forEach((product) => {
-      const productElement = createProductElement(product);
-      mainElement.appendChild(productElement);
-    });
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-}
-
-renderProducts();
+document.addEventListener("DOMContentLoaded", async () => {
+  await renderCategories();
+  events.init();
+});

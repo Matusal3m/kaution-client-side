@@ -1,16 +1,11 @@
-function createProductElement({
-  id,
-  name,
-  description,
-  quantity,
-}) {
+function createProductElement({ id, name, description, quantity }) {
   const productElement = document.createElement("div");
 
   productElement.id = `product-${id}`;
-  productElement.className = "product";
+  productElement.classList.add("product");
 
   productElement.innerHTML = `
-    <div class="wrapper >
+    <div class="wrapper" >
       <span class="product__name">${name}</span>
       <span class="product__description">${description}</span>
     </div>
@@ -20,4 +15,4 @@ function createProductElement({
   return productElement;
 }
 
-export default createProductElement
+export default createProductElement;

@@ -1,6 +1,6 @@
-async function fetchProducts() {
+async function fetchProducts(category) {
   try {
-    const response = await fetch("https://fakestoreapi.com/products");
+    const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
     const data = await response.json();
 
     const newData = data.map((product) => {
@@ -13,7 +13,7 @@ async function fetchProducts() {
 
     return newData;
   } catch (error) {
-    console.error(error);
+    console.error("error fetching products on category:", error);
     return [];
   }
 }
