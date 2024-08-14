@@ -8,7 +8,7 @@ function toggleCategory(category = document.querySelector(".category"), event) {
 
   products.forEach((product) => {
     if (!product.classList.contains("category__name")) {
-      product.classList.toggle("product--desactive");
+      product.classList.toggle("product--toggle");
     }
   });
 }

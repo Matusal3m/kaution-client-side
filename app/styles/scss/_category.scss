@@ -1,5 +1,6 @@
 @use "base";
 @use "mixins";
+@use "sass:color";
 
 .category {
   @include mixins.flex($align: normal, $justify: space-between, $direction: column);
@@ -9,10 +10,11 @@
     background: base.$tertiary-color;
     padding: 8px;
     color: base.$secondary-color;
+    border-radius: 4px;
   }
 
   &--toggle {
-    border: 3px solid white;
+    border: 1px solid base.$border-color;
   }
 
 }
