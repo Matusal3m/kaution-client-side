@@ -1,7 +1,12 @@
+/**
+ * Fetches all the categories from the server.
+ * @returns {array} - An array with the categories objects.
+ */
+
 async function fetchCategories() {
   try {
     const response = await fetch(
-      "https://kaution-api.onrender.com/user/all/category"
+      "http://localhost:3000/user/all/category"
     );
     const data = await response.json();
 

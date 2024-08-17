@@ -1,6 +1,16 @@
 import fetchCategories from "./fetchCategories";
 import createCategoryElement from "./createCategoryElement";
 
+/**
+ * Render categories to the DOM.
+ * 
+ * This function fetches categories from the server and, for each category, 
+ * creates a category element wiht its respective products
+ * and appends it to the main element.
+ * 
+ * @returns {Promise<void>}
+ */
+
 async function renderCategories() {
   try {
     const mainElement = document.querySelector("main");

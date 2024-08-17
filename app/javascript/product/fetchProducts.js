@@ -1,17 +1,18 @@
+/**
+ * Fetches products for a given category
+ *
+ * @param {object} category - The category object with the data to fetch the related products.
+ * @returns {array} - An array with the products objects related to the given category.
+ */
+
 async function fetchProducts(category) {
   try {
-    const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+    const response = await fetch(
+      `http://localhost:3000/user/category/${category.id}/product`
+    );
     const data = await response.json();
 
-    const newData = data.map((product) => {
-      product.quantity = Math.floor(Math.random() * 100);
-      product.name = product.title;
-      product.description = product.description.substring(0, 100) + "...";
-
-      return product
-    })
-
-    return newData;
+    return data;
   } catch (error) {
     console.error("error fetching products on category:", error);
     return [];

@@ -1,11 +1,10 @@
-function createProductElement({ id, name, description, quantity }, parent) {
-  
-  if (parent) {
-    parent.appendChild(
-      createProductElement({ id, name, description, quantity })
-    );
-  }
-
+/**
+ * Creates a product element based on the provided data.
+ *
+ * @param {object} product - The product object with the data to create the element.
+ * @returns {HTMLElement} - The HTML element representing the product.
+ */
+function createProductElement({ id, name, description, quantity }) {
   const productElement = document.createElement("div");
 
   productElement.id = `product-${id}`;
