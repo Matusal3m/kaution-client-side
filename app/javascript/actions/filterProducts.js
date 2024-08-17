@@ -1,20 +1,14 @@
 function filterProducts(filter) {
-  const productElements = document.getElementsByClassName("product");
-  const filteredProducts = Array.from(productElements).filter((product) => {
-    const productName = product
-      .querySelector(".product__name")
-      .textContent.toLowerCase();
+  const products = Array.from(document.querySelectorAll(".product"));
 
-    const isMatch = productName.includes(filter.toLowerCase());
+  products.forEach((product) => {
+    if (product.querySelector(".product__name").textContent.includes(filter) || filter == "") {
+      product.classList.remove("product--desactive");
+    } else {
+      product.classList.add("product--desactive");
+    }
+  })
 
-    product.classList.add(
-      isMatch ? "product--isMatched" : "product--isNotMatched"
-    );
-
-    return isMatch; 
-  });
-
-  return filteredProducts;
 }
 
 export default filterProducts;

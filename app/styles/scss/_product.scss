@@ -36,13 +36,8 @@
   &--desactive {
     display: none;
   }
-
-  &--isMatched {
-    display: block;
-  }
-
-  &--isNotMatched {
+  
+  &--toggle {
     display: none;
   }
-
 }

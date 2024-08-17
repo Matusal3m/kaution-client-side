@@ -1,4 +1,11 @@
-function createProductElement({ id, name, description, quantity }) {
+function createProductElement({ id, name, description, quantity }, parent) {
+  
+  if (parent) {
+    parent.appendChild(
+      createProductElement({ id, name, description, quantity })
+    );
+  }
+
   const productElement = document.createElement("div");
 
   productElement.id = `product-${id}`;
