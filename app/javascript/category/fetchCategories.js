@@ -1,6 +1,8 @@
 async function fetchCategories() {
   try {
-    const response = await fetch("https://fakestoreapi.com/products/categories");
+    const response = await fetch(
+      "https://kaution-api.onrender.com/user/all/category"
+    );
     const data = await response.json();
 
     return data;
