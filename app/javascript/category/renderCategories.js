@@ -1,5 +1,5 @@
-import fetchCategories from "./fetchCategories";
 import createCategoryElement from "./createCategoryElement";
+import * as fetchCategories from "./fetchCategories";
 
 /**
  * Render categories to the DOM.
@@ -12,9 +12,9 @@ import createCategoryElement from "./createCategoryElement";
  */
 
 async function renderCategories() {
-  try {
+  try { 
     const mainElement = document.querySelector("main");
-    const categories = await fetchCategories();
+    const categories = await fetchCategories.GetAll();
 
     for (const category of categories) {
       const categoryElement = await createCategoryElement(category);
