@@ -1,7 +1,7 @@
 // Methods for fetching categories.
 // GetAll, GetByUserId, Create, Delete, Update
 
-const host = "http://localhost:3000";
+const host = "https://kaution-api.onrender.com/";
 
 /**
  * 
