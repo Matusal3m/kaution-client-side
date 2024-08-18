@@ -7,7 +7,7 @@
 function createProductElement({ id, name, description, quantity }) {
   const productElement = document.createElement("div");
 
-  productElement.id = `product-${name}`;
+  productElement.id = id;
   productElement.classList.add("product");
 
   productElement.innerHTML = `

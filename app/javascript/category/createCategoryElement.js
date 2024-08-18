@@ -11,7 +11,7 @@ import * as fetchProducts from "../product/fetchProducts";
 async function createCategoryElement(category) {
   const categoryElement = document.createElement("div");
 
-  categoryElement.id = `category-${category.name}`;
+  categoryElement.id = category.id;
   categoryElement.classList.add("category");
   categoryElement.innerHTML = `<div class="category__name">${category.name}</div>`;
 

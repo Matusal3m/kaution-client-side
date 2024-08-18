@@ -27,11 +27,13 @@ async function Create({ name, description, quantity }, category) {
       `${host}/user/category/${category.id}/product`,
       {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           name,
           description,
           quantity,
-          categoryId: category.id,
         }),
       }
     );
@@ -43,12 +45,15 @@ async function Create({ name, description, quantity }, category) {
   }
 }
 
-async function Update({ id, name, description, quantity }, category) {
+async function Update({ id, name, description, quantity }, categoryId) {
   try {
     const response = await fetch(
-      `${host}/user/category/${category.id}/product/${id}`,
+      `${host}/user/category/${categoryId}/product/${id}`,
       {
         method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           name,
           description,
@@ -63,10 +68,10 @@ async function Update({ id, name, description, quantity }, category) {
   }
 }
 
-async function Delete(productId, category) {
-  try {
+async function Delete(productId, categoryId) {
+  try { 
     const response = await fetch(
-      `${host}/user/category/${category.id}/product/${productId}`,
+      `${host}/user/category/${categoryId}/product/${productId}`,
       {
         method: "DELETE",
       }

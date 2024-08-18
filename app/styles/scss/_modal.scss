@@ -1,0 +1,60 @@
+@use "base";
+@use "mixins";
+
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  @include mixins.flex();
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: base.$primary-color;
+    margin-bottom: 10px;
+  }
+
+  &__wrapper {
+    position: absolute;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 16px;
+  }
+
+  &__content {
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid base.$border-color;
+    overflow: auto;
+  }
+
+  &__name,
+  &__description {
+    @include mixins.flex(
+      $direction: column,
+      $align: normal,
+      $justify: space-between
+    );
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  &__buttons {
+    @include mixins.flex($justify: space-between);
+
+    &__submit {
+      @include mixins.button($color: rgb(20, 240, 20));
+    }
+
+    &__delete {
+      @include mixins.button($color: rgb(255, 0, 0));
+    }
+  }
+}

@@ -3,6 +3,11 @@
 
 const host = "http://localhost:3000";
 
+/**
+ * 
+ * @returns {array}
+ */
+
 async function GetAll() {
   try {
     const response = await fetch(`${host}/user/all/category`);
@@ -17,9 +22,7 @@ async function GetAll() {
 
 async function GetByUserId(userId) {
   try {
-    const response = await fetch(
-      `${host}/user/${userId}/category`
-    );
+    const response = await fetch(`${host}/user/${userId}/category`);
 
     const data = await response.json();
 
@@ -29,9 +32,9 @@ async function GetByUserId(userId) {
   }
 }
 
-async function Create(name, description) {
+async function Create({ name, description }, userId) {
   try {
-    const response = await fetch(`${host}/user/category`, {
+    const response = await fetch(`${host}/user/${userId}/category`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,12 +50,9 @@ async function Create(name, description) {
 
 async function Delete(categoryId) {
   try {
-    const response = await fetch(
-      `${host}/user/category/${categoryId}`,
-      {
-        method: "DELETE",
-      }
-    );
+    const response = await fetch(`${host}/user/category/${categoryId}`, {
+      method: "DELETE",
+    });
     return response.ok;
   } catch (error) {
     console.error("Error deleting category:", error);
@@ -61,16 +61,13 @@ async function Delete(categoryId) {
 
 async function Update({ categoryId, name, description }) {
   try {
-    const response = await fetch(
-      `${host}/user/category/${categoryId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, description }),
-      }
-    );
+    const response = await fetch(`${host}/user/category/${categoryId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, description }),
+    });
     return response.ok;
   } catch (error) {
     console.error("Error updating category:", error);

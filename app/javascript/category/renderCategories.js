@@ -3,22 +3,30 @@ import * as fetchCategories from "./fetchCategories";
 
 /**
  * Render categories to the DOM.
- * 
- * This function fetches categories from the server and, for each category, 
+ *
+ * This function fetches categories from the server and, for each category,
  * creates a category element wiht its respective products
  * and appends it to the main element.
- * 
+ *
  * @returns {Promise<void>}
  */
 
 async function renderCategories() {
-  try { 
+  try {
+    if(document.querySelector(".categories-wrapper")) {
+      document.querySelector(".categories-wrapper").remove();
+    }
+
     const mainElement = document.querySelector("main");
+    const categoriesWrapper = document.createElement("div");
+    categoriesWrapper.classList.add("categories-wrapper");
+
     const categories = await fetchCategories.GetAll();
 
     for (const category of categories) {
       const categoryElement = await createCategoryElement(category);
-      mainElement.appendChild(categoryElement);
+      categoriesWrapper.appendChild(categoryElement);
+      mainElement.appendChild(categoriesWrapper);
     }
   } catch (error) {
     console.error("Error rendering categories:", error);

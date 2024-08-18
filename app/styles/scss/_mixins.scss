@@ -49,3 +49,14 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
+
+@mixin button($color: #fff) {
+  background: $color;
+  font-weight: bold;
+  border: none;
+  color: #000;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
