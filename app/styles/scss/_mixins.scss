@@ -1,6 +1,51 @@
+@use "base";
+
 @mixin flex($align: center, $justify: center, $direction: row) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin side-bar() {
+  width: 60%;
+  height: 100svh;
+  background: base.$secondary-color;
+  padding: 16px 16px 0 16px;
+}
+
+@mixin close-icon($inicial-color: #000, $final-color: rgb(172, 170, 170)) {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 2px;
+    background: $inicial-color;
+    transition: background 0.2s linear;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      background: $final-color;
+    }
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
 }
