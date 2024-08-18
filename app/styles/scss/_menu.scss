@@ -1,0 +1,61 @@
+@use "base";
+@use "mixins";
+
+.container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  min-height: 100svh;
+  background-color: #53535335;
+  z-index: 2;
+}
+
+.wrapper {
+  @include mixins.flex($align: flex-start, $justify: space-between);
+  margin-bottom: 10svh;
+}
+
+.menu {
+  @include mixins.side-bar();
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.4em;
+    color: base.$primary-color;
+  }
+
+  &__close {
+    @include mixins.close-icon();
+  }
+
+  &__list {
+    @include mixins.flex($direction: column, $align: flex-start);
+
+    list-style: none;
+
+    &__item {
+      margin-right: 16px;
+      color: #000;
+      font-size: 1.2em;
+      transition: color 0.2s linear;
+
+      a {
+        text-decoration: none;
+        transition: color 0.2s linear;
+
+        &:visited {
+          color: none;
+        }
+
+        &:hover {
+          color: rgb(172, 170, 170);
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: rgb(172, 170, 170);
+      }
+    }
+  }
+}

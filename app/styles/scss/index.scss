@@ -1,8 +1,10 @@
 @use "base";
+@use "mixins";
 @use "header";
 @use "product";
-@use "mixins";
 @use "category";  
+@use "menu";
+@use "form";
 
 body {overflow: hidden;}
 

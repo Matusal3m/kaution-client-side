@@ -1,0 +1,21 @@
+@use "base";
+@use "mixins";
+
+.add__form {
+  @include mixins.side-bar();
+
+  &__head-wrapper {
+    @include mixins.flex($direction: row, $align: flex-start, $justify: space-between);
+    margin-bottom: 10svh;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.4em;
+    color: base.$primary-color;
+  }
+
+  &__close {
+    @include mixins.close-icon();
+  }
+}
