@@ -15,7 +15,7 @@ function createProductElement({ id, name, description, quantity }) {
       <span class="product__name">${name}</span>
       <span class="product__description">${description}</span>
     </div>
-    <input type="number" value="${quantity}" class="product__quantity"/>
+    <input type="tel" value="${quantity}" class="product__quantity"/>
   `;
 
   return productElement;

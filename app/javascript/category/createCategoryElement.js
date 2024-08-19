@@ -1,4 +1,4 @@
-import createProductElement from "../product/createProductElement";
+import createProductElement from "../product/createProduct";
 import * as fetchProducts from "../product/fetchProducts";
 
 /**
@@ -15,7 +15,7 @@ async function createCategoryElement(category) {
   categoryElement.classList.add("category");
   categoryElement.innerHTML = `<div class="category__name">${category.name}</div>`;
 
-  const productsRelatedToCategory = await fetchProducts.GetByCategoryId(category);
+  const productsRelatedToCategory = await fetchProducts.GetByCategoryId(category.id);
 
   productsRelatedToCategory.forEach((product) => {
     const productElement = createProductElement(product);
