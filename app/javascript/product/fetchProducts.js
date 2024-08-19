@@ -5,7 +5,7 @@
  * @returns {array} - An array with the products objects related to the given category.
  */
 
-const host = "https://kaution-api.onrender.com/";
+const host = "https://kaution-api.onrender.com";
 
 async function GetByCategoryId(category) {
   try {
