@@ -18,4 +18,8 @@
   &__close {
     @include mixins.close-icon();
   }
+
+  &__input {
+    @include mixins.flex($direction: column, $align: flex-start)
+  }
 }

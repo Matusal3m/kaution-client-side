@@ -5,7 +5,7 @@
  * @returns {array} - An array with the products objects related to the given category.
  */
 
-const host = "https://kaution-api.onrender.com";
+const host = "http://localhost:3000";
 
 async function GetByCategoryId(category) {
   try {
@@ -21,10 +21,10 @@ async function GetByCategoryId(category) {
   }
 }
 
-async function Create({ name, description, quantity }, category) {
+async function Create({ name, description, quantity }, categoryId) {
   try {
     const response = await fetch(
-      `${host}/user/category/${category.id}/product`,
+      `${host}/user/category/${categoryId}/product`,
       {
         method: "POST",
         headers: {

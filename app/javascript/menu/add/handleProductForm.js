@@ -66,11 +66,7 @@ async function handleProductForm(form, formContainer) {
       quantity: quantityValue,
     };
 
-    const category = {
-      id: categoryId,
-    };
-
-    Create(product, category).then(async (response) => {
+    Create(product, categoryId).then(async (response) => {
       window.location.reload();
     });
   });
