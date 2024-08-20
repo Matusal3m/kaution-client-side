@@ -1,17 +1,17 @@
 const host = "http://localhost:3000";
 
-async function createUser({ email, senha }) {
+async function createUser({ name, email, password }) {
   try {
     const response = await fetch(`${host}/user/user-create`, {
-      body: JSON.stringify({
-        name: email.split("@")[0],
-        email,
-        senha,
-      }),
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      method: "POST",
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
     });
 
     return response.ok;
@@ -78,9 +78,4 @@ async function resendCode({ email }) {
   }
 }
 
-export {
-	createUser,
-	login,
-	verifyEmail,
-	resendCode
-}
+export { createUser, login, verifyEmail, resendCode };

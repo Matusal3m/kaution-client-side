@@ -1,4 +1,6 @@
-import createCategoryElement from "./createCategoryElement";
+//EXCLUIR
+
+import createCategoryElement from "./createCategory";
 import * as fetchCategories from "./fetchCategories";
 
 /**

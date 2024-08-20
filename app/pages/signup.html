@@ -3,29 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/login.css" />
     <title>Criar conta</title>
   </head>
   <body>
     <div class="login">
-      <form action="" class="login__form">
-        <label for="" class="login__form__input">
+      <form class="login__form">
+        <div class="login__title">Criar conta</div>
+        <label for="" class="login__label">
           <input
             type="email"
             placeholder="Email"
-            class="login__form__input__email"
+            class="login__input"
+            required
           />
         </label>
 
-        <label for="" class="login__form__input">
+        <label for="" class="login__label">
           <input
-            class="login__form__input__password"
+            class="login__input"
             type="password"
             placeholder="Senha"
+            required
           />
         </label>
 
-        <label for="" class="login__form__input">
-          <button class="login__form__input__submit">Criar conta</button>
+        <label for="" class="login__label">
+          <button class="login__button">Criar conta</button>
         </label>
       </form>
     </div>

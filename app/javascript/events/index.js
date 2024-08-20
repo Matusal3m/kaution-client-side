@@ -1,8 +1,5 @@
 import searchProducts from "./search";
-import toggleCategory from "./toggle";
 import createMenu from "./menu";
-import pressEvent from "./pressProduct";
-import quantityEvents from "./quantity";
 
 /**
  * The events directory contains all the event listeners for the app,
@@ -12,10 +9,7 @@ import quantityEvents from "./quantity";
 
 function init() {
   searchProducts();
-  toggleCategory();
   createMenu();
-  pressEvent();
-  quantityEvents();
 }
 
 export { init };

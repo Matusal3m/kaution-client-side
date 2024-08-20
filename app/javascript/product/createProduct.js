@@ -1,10 +1,12 @@
+import pressProductEvent from "./pressProductEvent"
+
 /**
  * Creates a product element based on the provided data.
  *
  * @param {object} product - The product object with the data to create the element.
  * @returns {HTMLElement} - The HTML element representing the product.
  */
-function createProductElement({ id, name, description, quantity }) {
+function createProduct({ id, name, description, quantity }) {
   const productElement = document.createElement("div");
 
   productElement.id = id;
@@ -18,7 +20,9 @@ function createProductElement({ id, name, description, quantity }) {
     <input type="tel" value="${quantity}" class="product__quantity"/>
   `;
 
+  pressProductEvent(productElement);
+
   return productElement;
 }
 
-export default createProductElement;
+export default createProduct;
