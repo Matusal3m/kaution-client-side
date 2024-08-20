@@ -1,0 +1,88 @@
+@use "base";
+@use "mixins";
+
+.login {
+  @include mixins.flex();
+  width: 100svw;
+  height: 100svh;
+  padding: 16px 32px;
+
+  &__form {
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+
+    width: 80%;
+    height: 50%;
+    background-color: base.$tertiary-color;
+    border-radius: 24px;
+    gap: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: base.$secondary-color;
+    border-radius: 4px;
+  }
+
+  &__title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: base.$primary-color;
+    margin: 0 auto;
+  }
+
+  &__label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: base.$primary-color;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    background-color: base.$primary-color;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    transition: scale 0.2s ease;
+
+    &:hover,
+    &:active {
+      background-color: darken(base.$primary-color, 10%);
+      scale: 1.05;
+    }
+  }
+
+  @media (min-height: 557px) {
+    .login {
+      &__form {
+        height: 80svh;
+        padding: 32px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .login {
+      &__form {
+        width: 60%;
+
+        &__input {
+          width: 100%;
+        }
+
+      }
+    }
+  }
+}
