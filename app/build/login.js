@@ -1,0 +1,1 @@
+(()=>{function a(){let e=document.querySelector(".login__form");e.addEventListener("submit",o=>{o.preventDefault(),console.log("form submitted");let n=e.querySelector("input[type='email']").value,r=e.querySelector(".input[type='password']").value,d={email:n,password:r}})}var t=a;document.addEventListener("DOMContentLoaded",t);})();

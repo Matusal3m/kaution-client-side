@@ -10,7 +10,7 @@ const host = "http://localhost:3000";
 async function GetByCategoryId(category) {
   try {
     const response = await fetch(
-      `${host}/user/category/${category.id}/product`
+      `${host}/user/category/${category}/product`
     );
     const data = await response.json();
 

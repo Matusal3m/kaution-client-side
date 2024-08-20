@@ -27,7 +27,7 @@ async function handleProductForm(form, formContainer) {
   
   <div class="add__form__input">
     <label for="quantity">Quantidade</label>
-    <input type="number" id="quantity" name="quantity" placeholder="Quantidade" required />
+    <input type="tel" id="quantity" name="quantity" placeholder="Quantidade" required />
   </div
 
   <div class="add__form__input">

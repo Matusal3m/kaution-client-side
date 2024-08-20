@@ -13,12 +13,9 @@ import * as fetchCategories from "./fetchCategories";
 
 async function renderCategories() {
   try {
-    if(document.querySelector(".categories-wrapper")) {
-      document.querySelector(".categories-wrapper").remove();
-    }
-
     const mainElement = document.querySelector("main");
     const categoriesWrapper = document.createElement("div");
+    
     categoriesWrapper.classList.add("categories-wrapper");
 
     const categories = await fetchCategories.GetAll();
