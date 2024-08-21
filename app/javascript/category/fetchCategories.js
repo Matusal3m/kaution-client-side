@@ -4,8 +4,9 @@
 const host = "http://localhost:3000";
 
 /**
- * 
- * @returns {array}
+ * Fetches all categories from the server
+ *
+ * @returns {Promise<Array<{ id: string; name: string; description: string; userId: string; created: string; updatedAt: string }>>}
  */
 
 async function GetAll() {

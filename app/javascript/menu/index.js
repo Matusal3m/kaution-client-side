@@ -1,30 +1,12 @@
-import createMenuHtml from "./createMenuHtml";
-import createAddForm from "./add";
+import createMenu from "./index";
 
-function createMenu() {
-  if (document.querySelector(".container")) return;
+const menuButton = document.querySelector("#menu-button");
 
-  const main = document.querySelector("main");
-  const container = document.createElement("div");
-  container.classList.add("container");
-
-  container.appendChild(createMenuHtml());
-
-  main.appendChild(container);
-
-  const closeButton = document.querySelector(".menu__close");
-  closeButton.addEventListener("click", () => {
-    container.remove();
+function menu() {
+  menuButton.addEventListener("click", () => {
+    createMenu();
+    console.log("menu button clicked");
   });
-
-  const addMenu = document.querySelector("#add-menu");
-  addMenu.addEventListener("click", (e) => {
-    container.innerHTML = "";
-    createAddForm(container);
-    
-    console.log("add menu button clicked");
-  });
-
 }
 
-export default createMenu;
+export default menu;

@@ -1,6 +1,5 @@
 import { Create } from "../../product/fetchProducts";
 import { GetAll } from "../../category/fetchCategories";
-import renderCategories from "../../category/renderCategories";
 
 async function handleProductForm(form, formContainer) {
   const categories = await GetAll();

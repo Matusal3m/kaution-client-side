@@ -1,4 +1,4 @@
-import searchProducts from "./search";
+import searchProducts from "../search";
 import createMenu from "./menu";
 
 /**

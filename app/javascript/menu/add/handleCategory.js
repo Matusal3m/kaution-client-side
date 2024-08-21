@@ -1,5 +1,4 @@
 import { Create } from "../../category/fetchCategories";
-import renderCategories from "../../category/renderCategories";
 
 function handleCategoryForm(form, formContainer) {
   formContainer.innerHTML = `
@@ -35,7 +34,9 @@ function handleCategoryForm(form, formContainer) {
     };
 
     Create(category).then((response) => {
-      renderCategories();
+      if (response) {
+        window.location.reload();
+      }
     });
   });
 }

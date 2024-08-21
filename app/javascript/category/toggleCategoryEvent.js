@@ -11,7 +11,7 @@ function toggleCategoryEvent(category) {
   category.addEventListener("click", (e) => {
     const isCategoryName = e.target.classList.contains("category__name");
 
-    if (isCategoryName) return;
+    if (!isCategoryName) return;
 
     category.classList.toggle("category--toggle");
     category

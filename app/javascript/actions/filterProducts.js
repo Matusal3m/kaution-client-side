@@ -1,23 +1,18 @@
 /**
- * Filters based on a filter string and enables or disables products visibility.
- * This event is triggered when the user types in the search bar (input event).
+ * Filters products based on a search string and toggles their visibility.
  *
- * @param {string} filter - The filter string to search for.
- * @returns {void} - No return value.
+ * @param {string} search - The search string to filter products by.
+ * @returns {void}
  */
-
-
-function filterProducts(filter) {
+function filterProducts(search) {
   const products = Array.from(document.querySelectorAll(".product"));
 
   products.forEach((product) => {
-    if (product.querySelector(".product__name").textContent.includes(filter) || filter == "") {
-      product.classList.remove("product--desactive");
-    } else {
-      product.classList.add("product--desactive");
-    }
-  })
+    const name = product.querySelector(".product__name").textContent;
+    const isVisible = name.includes(search) || search === "";
 
+    product.classList.toggle("product--desactive", !isVisible);
+  });
 }
 
 export default filterProducts;
